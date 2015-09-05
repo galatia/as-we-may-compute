@@ -5,6 +5,7 @@ $contentw: 768px;
   box-sizing: border-box;
   position: relative;
   transition: opacity 120ms cubic-bezier(.1,.83,.83,.67);
+  transition: color 220ms cubic-bezier(.1,.83,.83,.67);
 }
 
 html, body, .container {
@@ -239,21 +240,13 @@ pre {
     word-wrap: break-word;                 /* IE 5.5+ and up */
 }
 
-a:link {
+a, a:link, a:visited, a:active {
+    text-decoration: none;
     color: $link;
-}
-a:visited {
-    color: $link; // TODO
+    cursor: pointer;
 }
 a:hover {
-    color: $link;
-}
-a:active {
-    color: $link;
-}
-
-a {
-  text-decoration: none;
+    color: #000;
 }
 
 .navDropdownContainer {

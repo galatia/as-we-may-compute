@@ -18,12 +18,30 @@ if (Meteor.isClient) {
     this.state = new ReactiveDict();
     this.state.set('expanded', false);
   };
+  var doKatex = function(str) {
+    return str.replace(/\$[^$]+\$/,function(tex) {
+      return katex.renderToString(tex.slice(1,-1));
+    });
+  };
+  Template.registerHelper("katex", doKatex);
+  Template.readingTitle.helpers({
+    conjureUrl: function() {
+      var url = this.link && this.link.filter(function(x) { return x.url; }).shift().url;
+      if(!url && this.identifier) {
+        var arxiv_id = this.identifier.filter(function(x) { return x.type=="arxiv"; }).shift().id;
+        if(arxiv_id) {
+          url = "http://arxiv.org/pdf/" + arxiv_id + ".pdf";
+        } else {
+          var doi = this.identifier.filter(function(x) { return x.type=="doi" }).shift().id;
+          if(doi) {
+            url = "http://dx.doi.org/" + doi;
+          }
+        }
+      }
+      return url;
+    }
+  });
   Template.basicCitation.helpers({
-    mapTitle: function(title) {
-      return title.replace(/\$[^$]+\$/,function(tex) {
-        return katex.renderToString(tex.slice(1,-1));
-      });
-    },
     mapAuthors: function(authors) {
       var len = authors.length;
       if(len==1) { return authors; }
@@ -54,6 +72,9 @@ if (Meteor.isClient) {
     'click .expandable': function(event, template) {
       template.state.set('expanded', !template.state.get('expanded'));
       console.log(template.state.get('expanded'));
+    },
+    'click .expandable a': function(event) {
+      event.stopPropagation();
     }
   });
   Template.singleReading.events({

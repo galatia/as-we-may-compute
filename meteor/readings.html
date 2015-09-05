@@ -6,7 +6,7 @@
 
 <template name="filterSentence">
   <div class="filterSentence">
-    <input class="typeahead" name="author" type="text" placeholder="Any author" autocomplete="off" spellcheck="off" data-source="Authors.name"/> in all areas
+    <input class="typeahead" name="author" type="text" placeholder="Any author" autocomplete="off" spellcheck="off" data-source="Authors.name" /> in all areas
   </div>
 </template>
 
@@ -18,8 +18,16 @@
   </ul>
 </template>
 
+<template name="readingTitle">
+  {{#if conjureUrl}}
+    <a href="{{conjureUrl}}">{{{katex title}}}</a>
+  {{else}}
+    {{{katex title}}}
+  {{/if}}
+</template>
+
 <template name="basicCitation">
-  {{{mapTitle title}}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
+  {{> readingTitle}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
 </template>
 
 <template name="notes">
