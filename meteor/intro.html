@@ -1,3 +1,10 @@
 <template name="intro">
   {{> navDropdown "Intro"}}
+  {{{fragment "intro"}}}
+  {{#with settings}}
+    <div class="byline">{{owner}}, {{year}}</div>
+  {{/with}}
+  {{#if expanded}}
+    <div class="fold-out">{{{fragment "bio"}}}</div>
+  {{/if}}
 </template>
