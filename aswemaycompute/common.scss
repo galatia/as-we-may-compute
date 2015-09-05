@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navDropdownContainer {
+  font-size: 50px;
+  height: 55px;
+  width: 8em;
+  overflow: visible;
+  & > div {
+    border: 1px solid #888;
+    height: 100%;
+    overflow: hidden;
+    & > div {
+    }
+  }
+  div.item {
+    height: 55px;
+    position: relative;
+    bottom: 6px;
+    vertical-align: middle;
+    text-decoration: none;
+  }
+}
+.navDropdownContainer.expanded {
+  & > div {
+    height: auto;
+  }
+}

@@ -9,3 +9,6 @@ autopublish
 insecure
 accounts-google
 accounts-ui
+iron:router
+fortawesome:fontawesome
+fourseven:scss

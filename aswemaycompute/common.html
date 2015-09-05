@@ -1,0 +1,19 @@
+<template name="LoginLayout">
+  {{#if loggedIn}}
+    {{> yield}}
+  {{else}}
+    {{> login}}
+  {{/if}}
+</template>
+
+<template name="navDropdown">
+  <div class="navDropdownContainer {{state}}">
+    <div>
+      <div>
+        {{#each sortToTop .}}
+          <a href="{{link .}}"><div class="item">{{.}}</div></a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</template>
