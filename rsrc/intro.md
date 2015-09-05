@@ -8,5 +8,3 @@ Intro
 - **Computational Thought**. What is perhaps most remarkable about this particular question is that in answering it, we find  that  we  are  revisiting  much  of  the  work  that  was  done  in  the  early  sixties  and seventies that ultimately led to the current successful architectures.
 
 - **Computation-Aided Thought**. The  landscape of possibilities has evolved tremendously  in the  last few  years. Without a doubt, we can consider Moore’s law and the Internet.
-
-—Eliana Lorch, 2015

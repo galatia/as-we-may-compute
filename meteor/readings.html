@@ -1,6 +1,13 @@
 <template name="readings">
   {{> navDropdown "Readings"}}
+  {{> filterSentence}}
   {{> readingList}}
+</template>
+
+<template name="filterSentence">
+  <div class="filterSentence">
+    <input class="typeahead" name="author" type="text" placeholder="Any author" autocomplete="off" spellcheck="off" data-source="Authors.name"/> in all areas
+  </div>
 </template>
 
 <template name="readingList">
@@ -11,11 +18,41 @@
   </ul>
 </template>
 
+<template name="basicCitation">
+  {{{mapTitle title}}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
+</template>
+
+<template name="notes">
+  {{#with notes}}
+    <div class="fold-out">
+      {{#each .}}
+        <div class="notes-note">
+          {{{content}}}
+        </div>
+      {{/each}}
+    </div>
+  {{/with}}
+</template>
+
+<template name="permalink">
+  <a href="/readings/{{urltitle}}">{{> entypo 'link'}}</a>
+</template>
+
 <template name="reading">
-  <li>{{{mapTitle title}}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
+  <li class="{{#if expanded}}expanded{{else}}collapsed{{/if}}{{#if notes}} expandable{{/if}}">{{> entypo symbol}}{{> basicCitation}}
     {{#if expanded}}
-      <div class="fold-out">{{{notes}}}</div> 
+      {{> notes}}
+      {{> permalink}}
     {{/if}}
   </li>
 </template>
 
+<template name="singleReading">
+  {{> navDropdown "Readings"}}
+  <ul class="singleReading">
+    <li class="expanded">{{> entypo 'chevron-thin-left'}}{{> basicCitation}}
+      {{> notes}}
+      {{> permalink}}
+    </li>
+  </ul>
+</template>

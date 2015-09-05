@@ -1,5 +1,6 @@
 Readings = new Mongo.Collection("readings");
 Intro = new Mongo.Collection("intro");
+Authors = new Mongo.Collection("authors");
 
 isSecure = function() {
     return Meteor.settings && Meteor.settings.public && Meteor.settings.public.isSecure
@@ -36,18 +37,25 @@ if (Meteor.isClient) {
     }
   })
 
+  var isIntroPage = function(name) {
+    return name.toLowerCase()==="as we may compute";
+  };
   Template.navDropdown.helpers({
     sortToTop: function (thisSection) {
       console.log(thisSection);
-      sections = ["Intro",
-                  "Readings",
-                  "Writings",
-                  "Toys"];
-      sections.unshift((sections.splice(sections.indexOf(thisSection),1))[0]);
+      sections = ["AS WE MAY COMPUTE",
+                  "READINGS",
+                  "WRITINGS",
+                  "PLAY-THINGS"
+                 ];
+      sections.unshift((sections.splice(sections.indexOf(thisSection.toUpperCase()),1))[0]);
       return sections;
     },
+    isIntroPage: function(name) {
+      return isIntroPage(name);
+    },
     link: function(name) {
-      if(name==="Intro") {
+      if(isIntroPage(name)) {
         name = "";
       } else {
         name = name.toLowerCase();
@@ -57,6 +65,11 @@ if (Meteor.isClient) {
     state: function() {
       Session.setDefault("navDropdownState", "collapsed");
       return Session.get("navDropdownState");
+    },
+    icon: function() {
+      if(Session.equals("navDropdownState", "collapsed")) {
+        return 'chevron-thin-down';
+      } else return 'chevron-thin-up';
     }
   });
   Template.navDropdown.events({
@@ -69,9 +82,11 @@ if (Meteor.isClient) {
       event.stopPropagation();
     },
     "click .navDropdownContainer.expanded a": function(event) {
-      event.stopPropagation();
       event.preventDefault();
-      Router.go(event.currentTarget.getAttribute('href'));
+      var target = event.currentTarget.getAttribute('href')
+      if (target==='/' || document.location.pathname.indexOf(target) !== 0) {
+        Router.go(target);
+      }
       Session.set("navDropdownState", "collapsed");
     }
   });
@@ -80,22 +95,33 @@ if (Meteor.isClient) {
       Session.set("navDropdownState", "collapsed");
     }
   });
+  Template.LoginLayout.helpers({
+    containerClass: function() {
+       return Router.current().route.getName();
+    }
+  });
 }
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
     Readings.remove({});
+    Authors.remove({});
     var bib = JSON.parse(Assets.getText("bib.json"));
     bib.forEach(function(item) {
-      Readings.insert(item);     
+      item.urltitle=item.title.replace(/ /g,'-').replace(/[^a-zA-Z0-9-_.+!*'()]/g,'');
+      Readings.insert(item);
+      item.author.forEach(function(author) {
+        Authors.upsert(author, {$set: author});
+      });
     });
     Meteor.publish("readings", function() {
       if(isUserAuthorized(this)) {
-        return Readings.find();
+        return [Readings.find(), Authors.find()];
       }
     });
-    var introFragment = Assets.getText("intro.html");
-    var bioFragment = Assets.getText("bio.html");
+    var removeHeader = function(str) { return str.replace(/<h1.*<\/h1>/,""); }
+    var introFragment = removeHeader(Assets.getText("intro.html"));
+    var bioFragment = removeHeader(Assets.getText("bio.html"));
     Meteor.publish("intro", function() {
       if(isUserAuthorized(this)) {
         this.added("intro", "intro", {fragment: introFragment});

@@ -1,17 +1,43 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+  <script type="text/javascript">
+    WebFont.load({
+      google: { families: [ 'Palanquin:700,600,500,300,200,100,400:latin',
+                            'Montserrat:400,700:latin' ] }
+    });
+/*
+    (function() {
+      var wf = document.createElement('script');
+      wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+        '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+      wf.type = 'text/javascript';
+      wf.async = 'true';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(wf, s);
+    })(); */ </script>
+</head>
+
 <template name="LoginLayout">
-  {{#if loggedIn}}
-    {{> yield}}
-  {{else}}
-    {{> login}}
-  {{/if}}
+  <div class="container {{containerClass}}">
+    <div class="laptop"></div>
+    <div class="content">
+      {{#if loggedIn}}
+        {{> yield}}
+      {{else}}
+        {{> login}}
+      {{/if}}
+    </div>
+    <div class="laptop-balance"></div>
+  </div>
 </template>
 
 <template name="navDropdown">
   <div class="navDropdownContainer {{state}}">
     <div>
       <div>
+        {{> entypo icon}}
         {{#each sortToTop .}}
-          <a href="{{link .}}"><div class="item">{{.}}</div></a>
+        <a href="{{link .}}" class="item">{{#if isIntroPage .}}<b>{{.}}</b>{{else}}{{.}}{{/if}}</a>
         {{/each}}
       </div>
     </div>

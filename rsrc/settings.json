@@ -1,7 +1,9 @@
 {
   "public": {
     "owner": "Eliana Lorch",
-    "year": "2015"
+    "year": "2015",
+    "month": "Aug",
+    "location": "New York, NY"
   },
   "authorizedEmails": ["elianalorch@gmail.com", "david@dalrymple.co"]
 }

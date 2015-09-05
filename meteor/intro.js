@@ -1,6 +1,6 @@
 Router.route('/', function() {
   this.render('intro');
-});
+}, {name: 'intro'});
 
 if (Meteor.isClient) {
   Template.intro.created = function() {

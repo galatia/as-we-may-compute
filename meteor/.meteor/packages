@@ -8,8 +8,9 @@ meteor-platform
 accounts-google
 accounts-ui
 iron:router
-fortawesome:fontawesome
 fourseven:scss
 gwendall:body-events
 simple:katex
 reactive-dict
+lookback:entypo
+sergeyt:typeahead

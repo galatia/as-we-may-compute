@@ -1,8 +1,14 @@
 Router.route('/readings', function() {
   this.render('readings');
+}, {name: 'readings'});
+Router.route('/readings/:urltitle', function() {
+  this.render('singleReading', {data: Readings.findOne({urltitle: this.params.urltitle})});
 });
 
 if (Meteor.isClient) {
+  Template.filterSentence.onRendered(function() { 
+    Meteor.typeahead.inject();
+  });
   Template.readingList.helpers({
     filteredReadings: function() {
       return Readings.find({}, {sort: ["author.0.name", "title"]});
@@ -12,7 +18,7 @@ if (Meteor.isClient) {
     this.state = new ReactiveDict();
     this.state.set('expanded', false);
   };
-  Template.reading.helpers({
+  Template.basicCitation.helpers({
     mapTitle: function(title) {
       return title.replace(/\$[^$]+\$/,function(tex) {
         return katex.renderToString(tex.slice(1,-1));
@@ -30,15 +36,29 @@ if (Meteor.isClient) {
         }
         return val;
       });
-    },
+    }
+  });
+  Template.reading.helpers({
     expanded: function() {
       return Template.instance().state.get('expanded');
+    },
+    symbol: function() {
+      if (this.notes) {
+        if (Template.instance().state.get('expanded')) {
+          return      'minus';
+        } else return 'plus';
+      } else return   'dot-single';
     }
   });
   Template.reading.events({
-    'click': function(event, template) {
+    'click .expandable': function(event, template) {
       template.state.set('expanded', !template.state.get('expanded'));
       console.log(template.state.get('expanded'));
+    }
+  });
+  Template.singleReading.events({
+    'click .icon-chevron-thin-left': function() {
+      Router.go('/readings');
     }
   });
 }
