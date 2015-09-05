@@ -1,3 +1,21 @@
 <template name="readings">
   {{> navDropdown "Readings"}}
+  {{> readingList}}
 </template>
+
+<template name="readingList">
+  <ul>
+    {{#each filteredReadings}}
+      {{> reading}}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="reading">
+  <li>{{{mapTitle title}}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
+    {{#if expanded}}
+      <div class="fold-out">{{{notes}}}</div> 
+    {{/if}}
+  </li>
+</template>
+

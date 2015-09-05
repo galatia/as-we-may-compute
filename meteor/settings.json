@@ -1,6 +1,7 @@
 {
   "public": {
-    "isSecure": true
+    "owner": "Eliana Lorch",
+    "year": "2015"
   },
   "authorizedEmails": ["elianalorch@gmail.com", "david@dalrymple.co"]
 }

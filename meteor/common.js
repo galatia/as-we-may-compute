@@ -1,3 +1,5 @@
+Readings = new Mongo.Collection("readings");
+Intro = new Mongo.Collection("intro");
 
 isSecure = function() {
     return Meteor.settings && Meteor.settings.public && Meteor.settings.public.isSecure
@@ -17,13 +19,14 @@ Accounts.config({restrictCreationByEmailDomain: function(email) {
 }})
 
 // Helper function for checking that user is authorized
-var checkUserAuth = function() {
-  if(! Meteor.userId() && Meteor.settings.authorizedEmails) {
-    throw new Meteor.Error("not-authorized")
-  }
+var isUserAuthorized = function(that) {
+  return (!isSecure()) || that.userId;
 }
 
 if (Meteor.isClient) {
+  Meteor.subscribe('readings');
+  Meteor.subscribe('intro');
+
   // Check if logged in
   Template.registerHelper("loggedIn", function() {
     if(isSecure()) {
@@ -81,6 +84,25 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    Readings.remove({});
+    var bib = JSON.parse(Assets.getText("bib.json"));
+    bib.forEach(function(item) {
+      Readings.insert(item);     
+    });
+    Meteor.publish("readings", function() {
+      if(isUserAuthorized(this)) {
+        return Readings.find();
+      }
+    });
+    var introFragment = Assets.getText("intro.html");
+    var bioFragment = Assets.getText("bio.html");
+    Meteor.publish("intro", function() {
+      if(isUserAuthorized(this)) {
+        this.added("intro", "intro", {fragment: introFragment});
+        this.added("intro", "bio", {fragment: bioFragment});
+        this.ready();
+      }
+    });
   });
 }
 
