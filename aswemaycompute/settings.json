@@ -1,0 +1,6 @@
+{
+  "public": {
+    "isSecure": true
+  },
+  "authorizedEmails": ["elianalorch@gmail.com", "david@dalrymple.co"]
+}
