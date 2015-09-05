@@ -20,6 +20,7 @@ fortawesome:fontawesome@4.4.0
 fourseven:scss@3.2.0
 geojson-utils@1.0.3
 google@1.1.5
+gwendall:body-events@0.1.6
 html-tools@1.0.4
 htmljs@1.0.4
 http@1.1.0

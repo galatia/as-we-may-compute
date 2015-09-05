@@ -62,7 +62,18 @@ if (Meteor.isClient) {
       event.preventDefault();
       Session.set("navDropdownState", "expanded");
     },
-    "click .navDropdownContainer.expanded .item": function(event) {
+    "click .navDropdownContainer.expanded": function(event) {
+      event.stopPropagation();
+    },
+    "click .navDropdownContainer.expanded a": function(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      Router.go(event.currentTarget.getAttribute('href'));
+      Session.set("navDropdownState", "collapsed");
+    }
+  });
+  Template.body.events({
+    "click body": function(event) {
       Session.set("navDropdownState", "collapsed");
     }
   });
