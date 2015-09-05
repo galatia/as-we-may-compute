@@ -1,17 +1,91 @@
+//Lambda-Oinks/fonts/Serif/cmun-serif.css
+
+@font-face {
+  font-family: 'CMS';
+  src: url('cmunrm.eot');
+  src: url('cmunrm.eot?#iefix') format('embedded-opentype'),
+     url('cmunrm.woff') format('woff'),
+     url('cmunrm.ttf') format('truetype'),
+     url('cmunrm.svg#cmunrm') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*
+@font-face {
+  font-family: 'CMS';
+  src: url('cmunbx.eot');
+  src: url('cmunbx.eot?#iefix') fobxat('embedded-opentype'),
+     url('cmunbx.woff') fobxat('woff'),
+     url('cmunbx.ttf') fobxat('truetype'),
+     url('cmunbx.svg#cmunbx') fobxat('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+*/
+
+
+@font-face {
+  font-family: 'CMS';
+  src: url('cmunti.eot');
+  src: url('cmunti.eot?#iefix') format('embedded-opentype'),
+     url('cmunti.woff') format('woff'),
+     url('cmunti.ttf') format('truetype'),
+     url('cmunti.svg#cmunti') format('svg');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+@font-face {
+  font-family: 'CMS';
+  src: url('cmunbi.eot');
+  src: url('cmunbi.eot?#iefix') format('embedded-opentype'),
+     url('cmunbi.woff') format('woff'),
+     url('cmunbi.ttf') format('truetype'),
+     url('cmunbi.svg#cmunbi') format('svg');
+  font-weight: bold;
+  font-style: italic;
+}
+
+// Lambda-Oinks/fonts/Serif-Slanted/cmun-serif-slanted.css
+
+@font-face {
+  font-family: 'CMSS';
+  src: url('cmunsl.eot');
+  src: url('cmunsl.eot?#iefix') format('embedded-opentype'),
+     url('cmunsl.woff') format('woff'),
+     url('cmunsl.ttf') format('truetype'),
+     url('cmunsl.svg#cmunsl') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'CMSS';
+  src: url('cmunbl.eot');
+  src: url('cmunbl.eot?#iefix') format('embedded-opentype'),
+     url('cmunbl.woff') format('woff'),
+     url('cmunbl.ttf') format('truetype'),
+     url('cmunbl.svg#cmunbl') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+/* END FONTS */
+
+
 body {
     font-family: 'palanquin', 'calluna-sans', 'Source Sans Pro', 'acta-display', Helvetica, Arial, sans-serif;
-    font-weight: 100;
+    font-weight: normal;
     font-size: 18px;
     letter-spacing: -0.05rem;
     line-height: 1.5;
     text-align: left;
     margin-left: 25px;
-    background: rgb(56,56,56);//url("http://www.millionnyc.com/assets/images/bkg.main.jpg");
-    color: rgb(200,200,200);
-}
-
-strong {
-    color: rgb(250,250,250);
 }
 
 .container {
@@ -27,10 +101,6 @@ strong {
         margin-left: 45px;
         letter-spacing: -0.03rem;
     }
-}
-
-h1,h2,h3,h4 {
-    color: rgb(250,250,250);
 }
 
 h1 {
