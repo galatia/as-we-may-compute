@@ -8,10 +8,50 @@ Router.route('/readings/:urltitle', function() {
 if (Meteor.isClient) {
   Template.filterSentence.onRendered(function() { 
     Meteor.typeahead.inject();
+    setTimeout(function() {
+      $('.tt-input').each(function() {
+        var el = $(this);
+        var update = function(ev, sug) {
+          console.log(ev);
+          var id = 'text-width-tester';
+          var tag = $('#' + id);
+          if(!tag.length) {
+            tag = $('<span id="'+id+'" style="opacity:0; height:0px"></span>');
+            $('body').append(tag);
+          }
+          tag.css({"font-family": el.css('font-family'),
+                   "font-weight": el.css('font-weight'),
+                   "font-size":   el.css('font-size'),
+                   "letter-spacing":   el.css('letter-spacing'),
+                   "padding":     el.css('padding')})
+          var str = (el.typeahead('val') || el.val() || el.attr('placeholder')).replace(/ /g, ' ');
+          console.log("str: '"+str+"'");
+          tag.html(str);
+          var w = tag.width();
+          console.log("w: "+ w);
+          if (el.val() && sug) {
+            console.log(sug);
+            tag.html(sug.value.replace(/ /g, '&nbsp;'));
+            var w2 = tag.width();
+            w = w2>w? w2:w;
+            console.log("w2: "+ w2);
+          }
+          $('.tt-input').width(w);
+        }
+        update();
+        el.bind('typeahead:render', update);
+        el.bind('typeahead:select', update);
+        el.bind('typeahead:autocomplete', update);
+        el.bind('blur', update);
+      });
+    },5);
   });
+  Template.filterSentence.authors = function() {
+    return Authors.find({},{sort: ["name"]}).fetch().map(function(x) {return x.name;});
+  };
   Template.readingList.helpers({
     filteredReadings: function() {
-      return Readings.find({}, {sort: ["author.0.name", "title"]});
+      return Readings.find({}, {sort: ["author.0.name", "year"]});
     }
   });
   Template.reading.created = function() {
@@ -44,13 +84,23 @@ if (Meteor.isClient) {
   Template.basicCitation.helpers({
     mapAuthors: function(authors) {
       var len = authors.length;
-      if(len==1) { return authors; }
       return authors.map(function(val, ind) {
-        if(ind == len-1) {
-          val.and = true;
+        if(len > 1) {
+          if(ind == len-1) {
+            val.and = true;
+          }
+          if(ind < len-1 && len > 2) {
+            val.sep = true;
+          }
         }
-        if(ind < len-1 && len > 2) {
-          val.sep = true;
+        var comma = val.name.lastIndexOf(',')
+        if(comma<0) {
+          var space = val.name.lastIndexOf(' ');
+          val.given   = val.name.slice(0,space);
+          val.surname = val.name.slice(space+1);
+        } else {
+          val.surname = val.name.slice(0,comma);
+          val.given   = val.name.slice(comma+2);
         }
         return val;
       });
@@ -65,13 +115,12 @@ if (Meteor.isClient) {
         if (Template.instance().state.get('expanded')) {
           return      'minus';
         } else return 'plus';
-      } else return   'dot-single';
+      } else return   false;
     }
   });
   Template.reading.events({
     'click .expandable': function(event, template) {
       template.state.set('expanded', !template.state.get('expanded'));
-      console.log(template.state.get('expanded'));
     },
     'click .expandable a': function(event) {
       event.stopPropagation();

@@ -93,6 +93,9 @@ if (Meteor.isClient) {
   Template.body.events({
     "click body": function(event) {
       Session.set("navDropdownState", "collapsed");
+    },
+    "click .laptop": function(event) {
+      Router.go("/");
     }
   });
   Template.LoginLayout.helpers({

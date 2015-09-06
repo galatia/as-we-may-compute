@@ -6,7 +6,7 @@
 
 <template name="filterSentence">
   <div class="filterSentence">
-    <input class="typeahead" name="author" type="text" placeholder="Any author" autocomplete="off" spellcheck="off" data-source="Authors.name" /> in all areas
+    <input class="typeahead" name="author" type="text" placeholder="Any author" autocomplete="off" spellcheck="off" data-source="authors" data-min-length="0" data-limit="50"/> in all areas
   </div>
 </template>
 
@@ -19,15 +19,17 @@
 </template>
 
 <template name="readingTitle">
-  {{#if conjureUrl}}
-    <a href="{{conjureUrl}}">{{{katex title}}}</a>
-  {{else}}
-    {{{katex title}}}
-  {{/if}}
+  <span class="title">
+    {{#if conjureUrl}}
+      <a href="{{conjureUrl}}">{{{katex title}}}</a>
+    {{else}}
+      {{{katex title}}}
+    {{/if}}
+  </span>
 </template>
 
 <template name="basicCitation">
-  {{> readingTitle}} ({{year}}) <em>{{#each mapAuthors author}}{{#if and}}and {{/if}}{{name}}{{#if sep}};{{/if}} {{/each}}</em>
+  {{> readingTitle}} — <span class="authors">{{#each mapAuthors author}}{{#if and}}&amp; {{/if}}{{given}} {{surname}}{{#if sep}},{{/if}} {{/each}} <span class="year">({{year}})</span></span>
 </template>
 
 <template name="notes">
@@ -47,7 +49,7 @@
 </template>
 
 <template name="reading">
-  <li class="{{#if expanded}}expanded{{else}}collapsed{{/if}}{{#if notes}} expandable{{/if}}">{{> entypo symbol}}{{> basicCitation}}
+  <li class="{{#if expanded}}expanded{{else}}collapsed{{/if}}{{#if notes}} expandable{{/if}}">{{#with symbol}}{{> entypo}}{{/with}}{{> basicCitation}}
     {{#if expanded}}
       {{> notes}}
       {{> permalink}}
