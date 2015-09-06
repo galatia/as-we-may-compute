@@ -9,7 +9,8 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "Can  Programming Be Liberated from the von Neumann Style? A Functional Style and Its Algebra of Programs",
+    "title": "Can  Programming Be Liberated from the von Neumann Style?",
+    "subtitle": "A Functional Style and Its Algebra of Programs",
     "author": [{"name":"Backus, John"}],
     "type": "article",
     "year": "1978",
@@ -115,7 +116,8 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "The Differential Analyzer: A New Machine for Solving Differential Equations",
+    "title": "The Differential Analyzer",
+    "subtitle": "A New Machine for Solving Differential Equations",
     "author": [{"name": "Bush, Vannevar"}],
     "type": "article",
     "year": "1931",
@@ -137,7 +139,8 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "Comics, Linguistics, and Visual Language: The past and future of a field",
+    "title": "Comics, Linguistics, and Visual Language",
+    "subtitle": "The past and future of a field",
     "author": [{"name": "Cohn, Neil"}],
     "type": "unpublished",
     "year": "2012",
@@ -218,7 +221,8 @@
 {
     "booktitle": "IBM Co-Evolution Symposium",
     "author": [{"name": "Engelbart, Doug"}],
-    "title": "Improving Our Ability to Improve: A Call for Investment in a New Future",
+    "title": "Improving Our Ability to Improve",
+    "subtitle": "A Call for Investment in a New Future",
     "type": "inproceedings",
     "year": "2003",
     "link": [{"url":"http://worrydream.com/refs/Engelbart%20-%20Improving%20Our%20Ability%20to%20Improve.pdf"}],
@@ -226,7 +230,7 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "A Marriage of Convenience: The Founding of the MIT Artificial Intelligence Laboratory",
+    "title": "The Founding of the MIT AI Laboratory",
     "author": [{"name":"Chiou"},{"name":"Music, Craig"},{"name":"Sprague, Kara"},{"name":"Wahba, Rebekah"}],
     "type": "unpublished",
     "year": "2001",
@@ -245,7 +249,7 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "An Essay on The Psychology of Invention in the Mathematical Field",
+    "title": "The Psychology of Invention in the Mathematical Field",
     "author": [{"name": "Hadamard, Jacques"}],
     "type": "book",
     "year": "1945",
@@ -332,7 +336,7 @@
 {
   "recommender": "davidad",
   "tags": [{"area":"cf"}],
-  "title": "Git Basics - Tagging",
+  "title": "Git Basics: Tagging",
   "author": [{"name": "Chacon, Scott"}, {"name": "Straub, Ben"}],
   "type": "inbook",
   "booktitle": "Pro Git",
@@ -343,7 +347,8 @@
 {
   "recommender": "davidad",
   "tags": [{"area":"cf"}],
-  "title": "Convergence in Language Design: A Case of Lightning Striking Four Times in the Same Place",
+  "title": "Convergence in Language Design",
+  "subtitle": "A Case of Lightning Striking Four Times in the Same Place",
   "author": [{"name": "van Roy, Peter"}],
   "type": "inproceedings",
   "year": "2006",
@@ -389,7 +394,8 @@
 {
   "recommender": "davidad",
   "tags": [{"area":"cf"}],
-  "title": "More Efficient Datalog Queries: Subsumptive Tabling Beats Magic Sets",
+  "title": "Subsumptive Tabling Beats Magic Sets",
+  "subtitle": "More Efficient Datalog Queries",
   "author": [{"name": "Tekle, K. Tuncay"}, {"name":"Liu, Yanhong A."}],
   "type": "inproceedings",
   "year": "2011",
@@ -510,45 +516,110 @@
 {
   "recommender": "davidad",
   "tags": [{"area":"cf"}],
-  "title": "Succinct: rank, select, tries",
+  "title": "Advanced Data Structures: Lecture Notes",
   "author": [{"name": "Demaine, Erik"}],
   "type": "unpublished",
   "series": "6.851: Advanced Data Structures",
   "howpublished": "Lecture Notes",
   "year": "2012",
-  "link": [{"url": "http://courses.csail.mit.edu/6.851/spring12/scribe/L17.pdf"}]
+  "link": [{"url": "http://courses.csail.mit.edu/6.851/spring12/"}],
+  "notes": "In particular, lectures 8, 10, 17, 18"
 },
 {
-  "recommender": "davidad",
-  "tags": [{"area":"cf"}],
-  "title": "Succinct: compact suffix arrays and trees",
-  "author": [{"name": "Demaine, Erik"}],
-  "type": "unpublished",
-  "series": "6.851: Advanced Data Structures",
-  "howpublished": "Lecture Notes",
-  "year": "2012",
-  "link": [{"url": "http://courses.csail.mit.edu/6.851/spring12/scribe/L18.pdf"}]
+    "title": "An Interview with David Hestenes",
+    "subtitle": "His Life and Achievements",
+    "author": [{"name": "Hestenes, David"}],
+    "type": "article",
+    "year": "2012",
+    "journal": {"name": "Eurasia Journal of Mathematics, Science & Technology Education", "volume": "8", "issue": "2", "pages": "139--153"},
+    "link": [{"url":"http://worrydream.com/refs/Hestenes%20-%20An%20Interview%20with%20David%20Hestenes.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
 },
 {
-  "recommender": "davidad",
-  "tags": [{"area":"cf"}],
-  "title": "Memory hierarchy: ordered-file maintenance, list labeling, order queries, cache-oblivious priority queues",
-  "author": [{"name": "Demaine, Erik"}],
-  "type": "unpublished",
-  "series": "6.851: Advanced Data Structures",
-  "howpublished": "Lecture Notes",
-  "year": "2012",
-  "link": [{"url": "http://courses.csail.mit.edu/6.851/spring12/scribe/L08.pdf"}]
+    "title": "Modeling Games in the Newtonian World",
+    "author": [{"name": "Hestenes, David"}],
+    "type": "article",
+    "year": "1991",
+    "journal": {"name": "American Journal of Physics", "volume": "60", "issue": "8", "pages": "732--748"},
+    "link": [{"url":"http://worrydream.com/refs/Hestenes%20-%20Modeling%20games%20in%20the%20Newtonian%20World.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
 },
 {
-  "recommender": "davidad",
-  "tags": [{"area":"cf"}],
-  "title": "Dictionaries: universal, $k$-wise independent, simple tabulation hashing; chaining, dynamic perfect hashing, linear probing, cuckoo hashing",
-  "author": [{"name": "Demaine, Erik"}],
-  "type": "unpublished",
-  "series": "6.851: Advanced Data Structures",
-  "howpublished": "Lecture Notes",
-  "year": "2012",
-  "link": [{"url": "http://courses.csail.mit.edu/6.851/spring12/scribe/L08.pdf"}]
+    "title": "Reforming the Mathematical Language of Physics",
+    "author": [{"name": "Hestenes, David"}],
+    "type": "article",
+    "year": "2002",
+    "journal": {"name": "American Journal of Physics", "volume": "71", "issue": "2", "pages": "104--121"},
+    "link": [{"url":"http://worrydream.com/refs/Hestenes-ReformingTheMathematicalLanguageOfPhysics.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1119/1.1522700"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Secrets of Genius",
+    "author": [{"name": "Hestenes, David"}],
+    "type": "article",
+    "year": "1990",
+    "journal": {"name": "New Ideas in Psychology", "volume": "8", "issue": "2", "pages": "231--246"},
+    "link": [{"url":"http://worrydream.com/refs/Hestenes%20-%20Secrets%20of%20Genius.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1016/0732-118X(90)90013-R"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}],
+    "note": "Review of Imagery in Scientific Thought by Arthur I. Miller. Cambridge, MA: MIT Press, 1986."
+},
+{
+    "title": "A Universal Modular ACTOR Formalism for AI",
+    "author": [{"name":"Hewitt, Carl"},{"name":"Bishop, Peter"},{"name":"Steiger, Richard"}],
+    "booktitle": "Proceedings of the 3rd international joint conference on Artificial intelligence",
+    "type": "inproceedings",
+    "year": "1975",
+    "link": [{"url":"http://worrydream.com/refs/Hewitt-ActorModel.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "The Connection Machine",
+    "author": [{"name":"Hillis, Daniel"}],
+    "type": "phdthesis",
+    "school": "MIT",
+    "year": "1985",
+    "link": [{"url":"http://worrydream.com/refs/Hillis%20-%20The%20Connection%20Machine.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "The Emperor's Old Clothes",
+    "author": [{"name":"Hoare, C. A. R."}],
+    "type": "article",
+    "year": "1980",
+    "journal": {"name": "Communications of the ACM", "volume": "24", "issue": "2", "pages": "75--83"},
+    "link": [{"url":"http://worrydream.com/refs/Hoare%20-%20The%20Emperors%20Old%20Clothes.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Analogy as the Core of Cognition",
+    "booktitle": "The Analogical Mind: Perspectives from Cognitive Science",
+    "author": [{"name":"Hofstadter, Douglas"}],
+    "publisher": "The MIT Press",
+    "type": "inbook",
+    "year": "2001",
+    "pages": "499--538",
+    "link": [{"url":"http://worrydream.com/refs/Hofstadter%20-%20Analogy%20as%20the%20Core%20of%20Cognition.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "To Err is Human",
+    "subtitle": "To Study Error-Making is Cognitive Science",
+    "author": [{"name": "Hofstadter, Douglas"},{"name":"Moser, David"}],
+    "type": "article",
+    "year": "1989",
+    "journal": {"name": "Michigan Quarterly Review", "volume": "28", "issue": "2", "pages": "185--215"},
+    "link": [{"url":"http://worrydream.com/refs/Hofstadter%20-%20To%20Err%20Is%20Human.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
 }
 ]
