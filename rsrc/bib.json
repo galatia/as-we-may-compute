@@ -74,7 +74,7 @@
     "year": "1986",
     "link": [{"url":"http://worrydream.com/refs/Brooks-NoSilverBullet.pdf"}],
     "identifier": [{"type":"doi","id":"10.1109/MS.2008.14"}],
-    "notes": "From a 2008 reprint",
+    "note": "From a 2008 reprint",
     "recommender": "Bret Victor",
     "tags": [{"area": "CAT"}]
 },
@@ -85,7 +85,7 @@
     "year": "1945",
     "journal": {"name": "Life Magazine", "pages": "112--124"},
     "link": [{"url":"http://worrydream.com/refs/Bush%20-%20As%20We%20May%20Think%20(Life%20Magazine%209-10-1945).pdf"}],
-    "notes": "Condensed from Atlantic Monthly",
+    "note": "Condensed from Atlantic Monthly",
     "recommender": "Bret Victor",
     "tags": [{"area": "CAT"}]
 },
@@ -226,8 +226,8 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "A Marriage of Convenience: The Founding of the MIT Artificial Intelligence Laboratory",
-    "author": [{"name":"Chiou"},{"name":"Music, Craig"},{"name":"Sprague, Kara"},{"name":"Wahba, Rebekah"}],
+    "title": "The Founding of the MIT Artificial Intelligence Laboratory",
+    "author": [{"name":"Chiou, Stefanie"},{"name":"Music, Craig"},{"name":"Sprague, Kara"},{"name":"Wahba, Rebekah"}],
     "type": "unpublished",
     "year": "2001",
     "link": [{"url":"http://worrydream.com/refs/FoundingOfTheAILab.pdf"}],
@@ -312,7 +312,7 @@
   "pages": "111--122",
   "identifier": [{"type":"doi","id":"10.1145/1851182.1851198"}],
   "link": [{"url": "http://www.oneswarm.org/f2f_tr.pdf"}],
-  "notes": "Like <b>BitTorrent</b> but <i>better</i>"
+  "notes": [{"content": "Like <b>BitTorrent</b> but <i>better</i>"}]
 },
 {
   "recommender": "davidad",

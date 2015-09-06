@@ -3,14 +3,13 @@
 .typeahead,
 .tt-query,
 .tt-hint {
-  width: 396px;
-  padding: 8px 12px;
-  line-height: 30px;
-  border: 2px solid #ccc;
-  -webkit-border-radius: 8px;
-     -moz-border-radius: 8px;
-          border-radius: 8px;
-  outline: none;
+  width: auto;
+  padding: 2px 2px;
+  border: 1px solid rgb(220,220,220);
+  font-weight: 100;
+  font-family: 'palanquin';
+  font-size: 18px;
+  vertical-align: baseline !important;
 }
 
 .typeahead {
@@ -18,7 +17,8 @@
 }
 
 .typeahead:focus {
-  border: 2px solid #0097cf;
+  border: 1px solid rgb(80,80,80);
+  outline: none;
 }
 
 .tt-query {
