@@ -1,0 +1,45 @@
+$cf:         #6e205a;
+$cf-ct:      #584898;
+$ct:         #0071ce;
+$ct-cat:     #008f7f;
+$cat:        #968d3b;
+$cat-cf:     #a15a38;
+$cat-cf-ct:  #493b76;
+
+.readings .content ul li {
+  .cat-cf-ct {
+    a {
+      color: $cat-cf-ct;
+    }
+  }
+  .cat-cf {
+    a {
+      color: $cat-cf;
+    }
+  }
+  .cf {
+    a {
+      color: $cf;
+    }
+  }
+  .cf-ct {
+    a {
+      color: $cf-ct;
+    }
+  }
+  .ct {
+    a {
+      color: $ct;
+    }
+  }
+  .cat-ct {
+    a {
+      color: $ct-cat;
+    }
+  }
+  .cat {
+    a {
+      color: $cat;
+    }
+  }
+}

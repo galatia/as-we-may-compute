@@ -10,7 +10,7 @@
   </div>
 </template>
 <template name="authorDropdown">
-  <input class="typeahead" name="author" type="text" placeholder="any author" autocomplete="off" spellcheck="off" data-source="authors" data-min-length="0"/>
+  <input class="typeahead" name="author" type="text" placeholder="any author" autocomplete="off" spellcheck="off" data-source="authors" data-min-length="0" data-limit="200"/>
 </template>
 <template name="sortDropdown">
   {{#dropdown .}}
@@ -27,7 +27,7 @@
 </template>
 
 <template name="readingTitle">
-  <span class="title">
+  <span class="title {{areaComboStr}}">
     {{#if conjureUrl}}
       <a href="{{conjureUrl}}">{{{katex title}}}</a>
     {{else}}

@@ -47,7 +47,7 @@ if (Meteor.isClient) {
     author: {label: "author", spec: ["author.0.name", "asc"]},
     year: {label: "year", spec: ["year", "asc"]},
     yearRev: {label: "year (-)", spec: ["year", "desc"]},
-    area: {label: "area", spec: ["areaKey", "asc"]},
+    area: {label: "area", spec: ["areaCombo", "asc"]},
     title: {label: "title", spec: ["title", "asc"]}
   };
   for (var key in ss) {
@@ -122,6 +122,9 @@ if (Meteor.isClient) {
         }
       }
       return url;
+    },
+    areaComboStr: function() {
+      return AreaCombos[this.areaCombo];
     }
   });
   Template.basicCitation.helpers({
