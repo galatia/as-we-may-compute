@@ -101,6 +101,7 @@ if (Meteor.isClient) {
     sortToTop: function (list) {
       var stateVar = Template.currentData().stateVar;
       if (stateVar) {
+        Session.setDefault(stateVar,Template.currentData().selected);
         var current = Session.get(stateVar);
         if (current) {
           list = list.slice();
