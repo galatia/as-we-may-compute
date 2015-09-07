@@ -33,12 +33,18 @@
 </template>
 
 <template name="navDropdown">
-  <div class="navDropdownContainer {{state}}">
+  {{#dropdown class='nav' selected=. options=sections stateVar='page'}}
+    <a href="{{link .}}" data-key="{{.}}" class="item">{{#if isIntroPage .}}<b>{{.}}</b>{{else}}{{.}}{{/if}}</a>
+  {{/dropdown}}
+</template>
+
+<template name="dropdown">
+  <div class="dropdownContainer {{state}} {{class}}">
     <div>
       <div>
         {{> entypo icon}}
-        {{#each sortToTop .}}
-        <a href="{{link .}}" class="item">{{#if isIntroPage .}}<b>{{.}}</b>{{else}}{{.}}{{/if}}</a>
+        {{#each sortToTop options}}
+          {{> UI.contentBlock .}}
         {{/each}}
       </div>
     </div>

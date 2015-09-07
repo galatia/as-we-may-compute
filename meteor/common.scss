@@ -28,12 +28,21 @@ body {
     text-align: left;
 }
 .container {
+  position: relative;
   padding-left: 10px;
   padding-right: 10px;
     transition: background 240ms cubic-bezier(.1,.83,.83,.67);
     //background: url("http://www.millionnyc.com/assets/images/bkg.main.jpg");
-    h1,h2,h3,h4, .navDropdownContainer .item {
+    .nav.dropdownContainer {
+      z-index: 10;
+      height: 64px;
+      div div svg.icon {
+        top: 9px;
+      }
+    }
+    h1,h2,h3,h4, .nav.dropdownContainer .item {
         font-family: 'Montserrat';
+        width: 100%;
         color: rgb(0,0,0);
     }
     &.intro {
@@ -43,14 +52,14 @@ body {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        .navDropdownContainer > div {
+        .nav.dropdownContainer > div {
           background: rgba(5,5,5,0.8);
           border-color: rgb(80, 80, 80);
         }
         strong {
             color: rgb(250,250,250);
         }
-        h1,h2,h3,h4, .navDropdownContainer .item {
+        h1,h2,h3,h4, .nav.dropdownContainer .item {
             color: rgb(250,250,250);
         }
         $bigLaptopWidth: 16px*10;
@@ -199,7 +208,7 @@ li {
     }
 }
 
-h1, .navDropdownContainer {
+h1, .nav.dropdownContainer {
     font-family: 'palanquin', 'calluna-sans', 'Source Sans Pro', 'acta-display', Georgia, Times, serif;
     font-size: 2.4em;
     text-align: left;
@@ -296,43 +305,57 @@ input {
   transition: background 240ms cubic-bezier(.1,.83,.83,.67);
 }
 
-.navDropdownContainer {
-  animation: fadein 250ms;
-  height: 64px;
-  width: 100%;
-  overflow: visible;
-  & > div {
-    border: 1px solid rgb(220,220,220);
-    background-color: rgba(255,255,255,0.8);
-    z-index: 2;
-    height: 100%;
-    overflow: hidden;
-    & > div {
-      .icon {
-        fill: currentColor;
-        position: absolute;
-        right: 0.63ex;
-        top: 0.4ex;
-        width: 1em;
-        height: 1em;
-      }
-    }
-  }
-  a.item {
-    transition: opacity 190ms cubic-bezier(.1,.83,.83,.67), color 240ms cubic-bezier(.1,.83,.83,.67);
-    &:not(:first-of-type) {
-      opacity: 0.7;
-    }
-    &:hover {
-      transition: opacity 190ms cubic-bezier(.1,.83,.83,.67), color 240ms cubic-bezier(.1,.83,.83,.67);
-      opacity: 1.0;
-    }
+.nav.dropdownContainer {
+  .item {
     display: block;
     height: 55px;
     line-height: 50px;
     padding-bottom: 9px;
     padding-top: 5px;
     padding-left: 5px;
+  }
+  & > div {
+    background-color: rgba(255,255,255,0.83);
+  }
+}
+
+.dropdownContainer {
+  animation: fadein 250ms;
+  display: inline-block;
+  vertical-align: middle;
+  height: 2em;
+  width: auto;
+  overflow: visible;
+  & > div {
+    border: 1px solid rgb(220,220,220);
+    background-color: rgba(255,255,255,0.97);
+    z-index: 2;
+    height: 100%;
+    overflow: hidden;
+    & > div {
+      .item {
+        padding-right: 1.5em;
+      }
+      .icon {
+        fill: currentColor;
+        position: absolute;
+        right: 0.63ex;
+        top: 0.43em;
+        width: 1em;
+        height: 1em;
+      }
+    }
+  }
+  .item {
+    transition: opacity 190ms cubic-bezier(.1,.83,.83,.67), color 240ms cubic-bezier(.1,.83,.83,.67);
+    &:not(:first-of-type) {
+      opacity: 0.7;
+      display: none;
+    }
+    &:hover {
+      transition: opacity 190ms cubic-bezier(.1,.83,.83,.67), color 240ms cubic-bezier(.1,.83,.83,.67);
+      opacity: 1.0;
+    }
     text-decoration: none;
     font-weight: 400;
     b {
@@ -340,12 +363,15 @@ input {
     }
   }
 }
-.navDropdownContainer.expanded {
+.dropdownContainer.expanded {
   & > div {
     height: auto;
     & > div {
       .item:first-of-type {
         border-bottom: 1px solid rgb(220,220,220);
+      }
+      .item:not(:first-of-type) {
+        display: block;
       }
     }
   }

@@ -41,15 +41,12 @@ if (Meteor.isClient) {
     return name.toLowerCase()==="as we may compute";
   };
   Template.navDropdown.helpers({
-    sortToTop: function (thisSection) {
-      console.log(thisSection);
-      sections = ["AS WE MAY COMPUTE",
-                  "READINGS",
-                  "WRITINGS",
-                  "PLAY-THINGS"
-                 ];
-      sections.unshift((sections.splice(sections.indexOf(thisSection.toUpperCase()),1))[0]);
-      return sections;
+    sections: function() {
+      return ["AS WE MAY COMPUTE",
+              "READINGS",
+              "WRITINGS",
+              "PLAY-THINGS"
+             ];
     },
     isIntroPage: function(name) {
       return isIntroPage(name);
@@ -61,38 +58,70 @@ if (Meteor.isClient) {
         name = name.toLowerCase();
       }
       return "/" + name;
-    },
-    state: function() {
-      Session.setDefault("navDropdownState", "collapsed");
-      return Session.get("navDropdownState");
-    },
-    icon: function() {
-      if(Session.equals("navDropdownState", "collapsed")) {
-        return 'chevron-thin-down';
-      } else return 'chevron-thin-up';
     }
   });
   Template.navDropdown.events({
-    "click .navDropdownContainer.collapsed": function(event) {
-      event.stopPropagation();
-      event.preventDefault();
-      Session.set("navDropdownState", "expanded");
-    },
-    "click .navDropdownContainer.expanded": function(event) {
-      event.stopPropagation();
-    },
-    "click .navDropdownContainer.expanded a": function(event) {
+    'click a': function(event) {
       event.preventDefault();
       var target = event.currentTarget.getAttribute('href')
       if (target==='/' || document.location.pathname.indexOf(target) !== 0) {
         Router.go(target);
       }
-      Session.set("navDropdownState", "collapsed");
+    }
+  });
+  Template.dropdown.created = function() {
+    this.state = new ReactiveVar("collapsed");
+    window.dropdownStates = window.dropdownStates || []
+    window.dropdownStates.push(this.state);
+    var stateVar = Template.currentData().stateVar;
+    if(stateVar) {
+      Session.setDefault(stateVar, Template.currentData().default);
+    }
+  }
+  Template.dropdown.helpers({
+    sortToTop: function (list) {
+      var stateVar = Template.currentData().stateVar;
+      if (stateVar) {
+        var current = Session.get(stateVar);
+        if (current) {
+          list = list.slice();
+          list.unshift((list.splice(list.map(function(x) {return (x.key || x).toLowerCase();}).indexOf(current.toLowerCase()),1))[0]);
+        }
+      }
+      return list;
+    },
+    state: function() {
+      return Template.instance().state.get();
+    },
+    icon: function() {
+      if(Template.instance().state.get() === "collapsed") {
+        return 'chevron-thin-down';
+      } else return 'chevron-thin-up';
+    }
+  });
+  Template.dropdown.events({
+    "click .dropdownContainer.collapsed": function(event) {
+      event.stopPropagation();
+      event.preventDefault();
+      Template.instance().state.set("expanded");
+    },
+    "click .dropdownContainer.expanded": function(event) {
+      event.stopPropagation();
+      Template.instance().state.set("collapsed");
+    },
+    "click .dropdownContainer.expanded .item": function(event) {
+      var stateVar = Template.currentData().stateVar;
+      var key = $(event.target).attr("data-key");
+      if(stateVar) {
+        Session.set(stateVar, key);
+      }
     }
   });
   Template.body.events({
     "click body": function(event) {
-      Session.set("navDropdownState", "collapsed");
+      dropdownStates.forEach(function(state) {
+        state.set("collapsed");
+      });
     },
     "click .laptop": function(event) {
       Router.go("/");
