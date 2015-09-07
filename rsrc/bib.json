@@ -94,7 +94,7 @@
 {
     "title": "J. C. R. Licklider Interview",
     "author": [{"name":"Licklider, J. C. R."},
-    "editor": {"name":"Aspray, William"},{"name":"Norberg, Arthur"}],
+    "editor": [{"name":"Aspray, William"},{"name":"Norberg, Arthur"}],
     "type": "misc",
     "year": "1988",
     "publisher": "Charles Babbage Institute",
@@ -1456,6 +1456,5 @@
     "link": [{"url":"http://worrydream.com/refs/diSessa%20-%20Momentum%20flow%20as%20an%20alternative%20perspective%20in%20elementary%20mechanics.pdf"}],
     "recommender": "Bret Victor",
     "tags": [{"area": "CAT"}]
-},
-{
+}
 ]
