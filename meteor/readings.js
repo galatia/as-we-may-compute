@@ -12,7 +12,6 @@ if (Meteor.isClient) {
       $('.tt-input').each(function() {
         var el = $(this);
         var update = function(ev, sug) {
-          console.log(ev);
           var id = 'text-width-tester';
           var tag = $('#' + id);
           if(!tag.length) {
@@ -25,33 +24,77 @@ if (Meteor.isClient) {
                    "letter-spacing":   el.css('letter-spacing'),
                    "padding":     el.css('padding')})
           var str = (el.typeahead('val') || el.val() || el.attr('placeholder')).replace(/ /g, ' ');
-          console.log("str: '"+str+"'");
           tag.html(str);
           var w = tag.width();
-          console.log("w: "+ w);
           if (el.val() && sug) {
-            console.log(sug);
             tag.html(sug.value.replace(/ /g, '&nbsp;'));
             var w2 = tag.width();
             w = w2>w? w2:w;
-            console.log("w2: "+ w2);
           }
-          $('.tt-input').width(w);
+          $('.typeahead').width(w);
         }
-        update();
         el.bind('typeahead:render', update);
         el.bind('typeahead:select', update);
         el.bind('typeahead:autocomplete', update);
         el.bind('blur', update);
+        update();
       });
-    },5);
+    },150);
+    Session.setDefault('readingSort1', 'author');
+    Session.setDefault('readingSort2', 'year');
   });
-  Template.filterSentence.authors = function() {
-    return Authors.find({},{sort: ["name"]}).fetch().map(function(x) {return x.name;});
+  var ss = {
+    author: {label: "author", spec: ["author.0.name", "asc"]},
+    year: {label: "year", spec: ["year", "asc"]},
+    yearRev: {label: "year (-)", spec: ["year", "desc"]},
+    area: {label: "area", spec: ["areaKey", "asc"]},
+    title: {label: "title", spec: ["title", "asc"]}
   };
+  for (var key in ss) {
+    ss[key].key = key;
+  }
+  var sort2s = {
+    author:   [ss.year, ss.yearRev, ss.area, ss.title],
+    year:     [ss.author, ss.area, ss.title],
+    yearRev:  [ss.author, ss.area, ss.title],
+    area:     [ss.author, ss.year, ss.yearRev, ss.title]
+  }
+  Template.filterSentence.helpers({
+    authors: function() {
+      return Authors.find({},{sort: ["name"]}).fetch().map(function(x) {return x.name;});
+    },
+    sort1: function() {
+      return {class: "sort sort1",
+              stateVar: "readingSort1",
+              default: 'author',
+              options: [ss.author, ss.year, ss.yearRev, ss.area, ss.title]};
+    },
+    sort2: function() {
+      var options = sort2s[Session.get('readingSort1')];
+      if(!(options && options.some(function(x) {return x.key == Session.get('readingSort2');}))) {
+        Session.set('readingSort2', options[0].key);
+      }
+      return options && {class: "sort sort2",
+                         stateVar: "readingSort2",
+                         default: 'year',
+                         options: options};
+    }
+  })
+  Template.filterSentence.events({
+    'typeahead:select, typeahead:autocomplete, typeahead:change, blur .typeahead': function() {
+      Session.set('readingFilter', {"author.name": $('.typeahead[name=author]').val() || undefined});
+    },
+  });
+
   Template.readingList.helpers({
     filteredReadings: function() {
-      return Readings.find({}, {sort: ["author.0.name", "year"]});
+      Session.setDefault('readingFilter', {});
+      Session.setDefault('readingSort', ["author.0.name", "year"]);
+      var s_spec = [ss[Session.get('readingSort1')].spec];
+      if(Session.get('readingSort2')) {
+        s_spec.push(ss[Session.get('readingSort2')].spec);
+      }
+      return Readings.find(Session.get('readingFilter'), {sort: s_spec});
     }
   });
   Template.reading.created = function() {
