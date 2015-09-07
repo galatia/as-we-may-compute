@@ -1133,4 +1133,329 @@
     "recommender": "Bret Victor",
     "tags": [{"area": "CAT"}]
 },
+{
+    "title": "Forth: The Early Years",
+    "author": [{"name":"Moore, Chuck"}],
+    "type": "manual",
+    "year": "1991",
+    "link": [{"url":"http://worrydream.com/refs/Moore%20-%20Forth%20-%20The%20Early%20Years.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Computer Lib Dream Machines",
+    "author": [{"name":"Nelson, Theodor H."}],
+    "type": "booklet",
+    "year": "1975",
+    "link": [{"url":"http://worrydream.com/refs/Nelson-ComputerLibDreamMachines1975.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "booktitle": "Proceedings of the 19th International Conference for the Psychology of Mathematics Education, Plenary Lectures",
+    "author": [{"name":"Papert, Seymour"}],
+    "title": "Beyond the Cognitive: The Other Face of Mathematics",
+    "type": "inproceedings",
+    "year": "1986",
+    "link": [{"url":"http://worrydream.com/refs/Papert%20-%20Beyond%20The%20Cognitive.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Teaching Children to be Mathematicians vs Teaching About Mathematics",
+    "author": [{"name":"Papert, Seymour"}],
+    "type": "article",
+    "year": "1971",
+    "journal": {"name": "International Journal of Mathematical Education in Science and Technology", "volume":"3", "number":"3", "pages": "249--262"},
+    "link": [{"url":"http://worrydream.com/refs/Papert%20-%20Teaching%20Children%20to%20be%20Mathematicians%20Versus%20Teaching%20About%20Mathematics.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1080/0020739700030306"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "What's the Big Idea? Toward a Pedagogy of Idea Power",
+    "author": [{"name":"Papert, Seymour"}],
+    "type": "article",
+    "year": "2000",
+    "journal": {"name": "IBM Systems Journal", "volume":"39", "number":"3", "pages": "720--729"},
+    "link": [{"url":"http://worrydream.com/refs/Papert%20-%20Whats%20the%20Big%20Idea.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1147/sj.393.0720"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Systems Software is Irrelevant",
+    "author": [{"name":"Pike, Rob"}],
+    "institution": "Bell Labs",
+    "type": "unpublished",
+    "year": "2000",
+    "link": [{"url":"http://worrydream.com/refs/Pike%20-%20Systems%20Software%20Research%20is%20Irrelevant.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Five Things We Need to Know About Technological Change",
+    "author": [{"name":"Postman, Neil"}],
+    "type": "unpublished",
+    "location": "Denver, CO",
+    "year": "1998",
+    "link": [{"url":"http://worrydream.com/refs/Postman%20-%20Five%20Things%20We%20Need%20to%20Know%20About%20Technological%20Change.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "A Mathematical Theory of Communication",
+    "author": [{"name":"Shannon Claude"}],
+    "type": "article",
+    "year": "1948",
+    "journal": {"name": "The Bell Systems Technical Journal", "volume":"27", "pages": "379--423, 623--656"},
+    "link": [{"url":"http://worrydream.com/refs/Shannon%20-%20A%20Mathematical%20Theory%20of%20Communication.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1002/j.1538-7305.1948.tb01338.x"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Communication Theory of Secrecy Systems",
+    "author": [{"name":"Shannon Claude"}],
+    "type": "techreport",
+    "year": "1946",
+    "note": "Originally appeared in a confidential report 'A Mathematical Theory of Cryptography' dated Sept.1, 1946, which has now been declassified.",
+    "link": [{"url":"http://worrydream.com/refs/Shannon%20-%20Communication%20Theory%20of%20Secrecy%20Systems.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "EMACS: The Extensible, Customizable, Self-Documenting Display Editor",
+    "author": [{"name":"Stallman, Richard"}],
+    "type": "techreport",
+    "year": "1979",
+    "institution": "MIT AI Lab",
+    "link": [{"url":"http://worrydream.com/refs/Stallman%20-%20EMACS,%20The%20Extensible,%20Customizable,%20Self-Documenting%20Display%20Editor.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Hermann Grassmann was Right",
+    "author": [{"name":"Stewart, Ian"}],
+    "type": "article",
+    "year": "1986",
+    "journal": {"name": "Nature", "volume":"321"},
+    "link": [{"url":"http://worrydream.com/refs/Stewart%20-%20Hermann%20Grassmann%20was%20Right.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Building Robust Systems",
+    "author": [{"name":"Sussman, Gerald"}],
+    "type": "unpublished",
+    "institution": "MIT",
+    "year": "2007",
+    "link": [{"url":"http://worrydream.com/refs/Sussman%20-%20Building%20Robust%20Systems.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Robust Design through Diversity",
+    "author": [{"name":"Sussman, Gerald"}],
+    "type": "unpublished",
+    "institution": "MIT",
+    "year": "1999",
+    "link": [{"url":"http://worrydream.com/refs/Sussman%20-%20Robust%20Design%20through%20Diversity.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Microelectronics and Computer Science",
+    "author": [{"name":"Sutherland, Ivan"}, {"name": "Carver, Mead"}],
+    "type": "article",
+    "year": "1977",
+    "journal": {"name": "Scientific American", "volume":"237", "issue":"3","pages": "210--228"},
+    "link": [{"url":"http://worrydream.com/refs/Sutherland%20-%20Microelectronics%20and%20Computer%20Science.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Sketchpad, a Man-Machine Graphical Communication System (PhD Thesis)",
+    "author": [{"name":"Sutherland, Ivan"}],
+    "type": "phdthesis",
+    "school": "MIT",
+    "year": "1963",
+    "link": [{"url":"http://worrydream.com/refs/Sutherland-Sketchpad.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Sketchpad, a Man-Machine Graphical Communication System",
+    "author": [{"name":"Sutherland, Ivan"}],
+    "type": "techreport",
+    "year": "1963",
+    "institution": "MIT Lincoln Lab",
+    "link": [{"url":"http://worrydream.com/refs/Sutherland%20-%20Sketchpad%20Report.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "booktitle": "Mathematics and the Aesthetic",
+    "author": [{"name":"Borwein, Jonathan M."}],
+    "title": "Aesthetics for the Working Mathematician",
+    "pages": "21--40",
+    "type": "inproceedings",
+    "publisher": "CMS",
+    "year": "2001",
+    "link": [{"url":"http://worrydream.com/refs/Borwein%20-%20Aesthetics%20for%20the%20Working%20Mathematician.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1007/978-0-387-38145-9_2"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "booktitle": "Proceedings of the IFIP Congress",
+    "author": [{"name":"Sutherland, Ivan"}],
+    "title": "The Ultimate Display",
+    "pages": "506--508",
+    "type": "inproceedings",
+    "year": "1965",
+    "link": [{"url":"http://worrydream.com/refs/Sutherland%20-%20The%20Ultimate%20Display.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "The Tyranny of the Clock",
+    "subtitle": "Remarks for the Turing Celebration",
+    "author": [{"name":"Sutherland, Ivan"}],
+    "type": "techreport",
+    "year": "2012",
+    "institution": "Asynchronous Research Center, Portland State University",
+    "link": [{"url":"http://worrydream.com/refs/Sutherland%20-%20Tyranny%20of%20the%20Clock.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Oral History of Robert W. Taylor",
+    "author": [{"name":"Taylor, Robert W."},
+    "editor": {"name":"McJones, Paul"},
+    "type": "misc",
+    "year": "2008",
+    "publisher": "Computer History Museum",
+    "link": [{"url":"http://worrydream.com/refs/Taylor%20-%20Oral%20History.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "The Cedar Programming Environment",
+    "subtitle": "A Midterm Report and Examination",
+    "author": [{"name":"Teitelman, Warren"}],
+    "type": "techreport",
+    "number": "CSL-83-11",
+    "year": "1984",
+    "institution": "Xerox Palo Alto Research Center",
+    "link": [{"url":"http://worrydream.com/refs/Teitelman%20-%20The%20Cedar%20Programming%20Environment,%20A%20Midterm%20Report%20and%20Examination.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "On Proof and Progress in Mathematics",
+    "author": [{"name":"Thurston, William"}],
+    "type": "article",
+    "year": "1994",
+    "journal": {"name": "Bulletin of the American Mathematical Society", "volume":"30", "number":"2", "pages":"161--177"},
+    "link": [{"url":"http://arxiv.org/pdf/math/9404236v1.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1090/S0273-0979-1994-00502-6"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Lucid, the Dataflow Programming Langugage",
+    "author": [{"name": "Wadge, William W."},{"name":"Ashcroft, Edward A."}],
+    "type": "book",
+    "year": "1985",
+    "publisher": "Academic Press",
+    "location": "London",
+    "link": [{"url":"http://worrydream.com/refs/Wadge%20-%20Lucid,%20the%20Dataflow%20Programming%20Language.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Collective dynamics of 'small-world' networks",
+    "author": [{"name":"Watts, Duncan J."},{"name":"Strogatz, Steven"}],
+    "type": "article",
+    "year": "1998",
+    "journal": {"name": "Nature", "volume":"393"},
+    "link": [{"url":"http://worrydream.com/refs/Watts-CollectiveDynamicsOfSmallWorldNetworks.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "The Unreasonable Effectiveness of Mathematics in the Natural Sciences",
+    "author": [{"name":"Wigner, Eugene"}],
+    "type": "inbook",
+    "year": "1960",
+    "publisher": "John Wiley & Sons, Inc.",
+    "link": [{"url":"http://worrydream.com/refs/Wigner%20-%20The%20Unreasonable%20Effectiveness%20of%20Mathematics%20in%20the%20Natural%20Sciences.pdf"}],
+    "identifier": [{"type":"doi","id":"10.1002/cpa.3160130102"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Six Views of Embodied Cognition",
+    "author": [{"name":"Wilson, Margaret"}],
+    "type": "article",
+    "year": "2002",
+    "journal": {"name": "Psychonomic Bulletin & Review", "volume":"9", "issue":"4", "pages":"625--636"},
+    "link": [{"url":"http://worrydream.com/refs/Wilson%20-%20Six%20views%20of%20embodied%20cognition.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Project Oberon",
+    "subtitle": "The Design of an Operating System and Compiler",
+    "author": [{"name":"Wirth, Niklaus"},{"name":"Gutknecht,Jurg"}],
+    "type": "unpublished",
+    "year": "2005",
+    "link": [{"url":"http://worrydream.com/refs/Wirth%20-%20Project%20Oberon.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "8010 Star Information System",
+    "subtitle": "Learner's Guide",
+    "type": "manual",
+    "year": "1981",
+    "institution": "Xerox Palo Alto Research Center",
+    "link": [{"url":"http://worrydream.com/refs/Xerox%20Star%20Learner's%20Guide.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Representations in Distributed Cognitive Tasks",
+    "author": [{"name":"Zhang, Jiajie"}, {"name":"Norman, Donald"}],
+    "type": "article",
+    "year": "1994",
+    "journal": {"name": "Cognitive Science", "volume":"18", "pages":"87--122"},
+    "link": [{"url":"http://worrydream.com/refs/Zhang%20-%20Representations%20in%20Distributed%20Cognitive%20Tasks.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Knowledge in Pieces",
+    "subtitle": "Constructivism in the Computer Age",
+    "author": [{"name":"diSessa, Andrea A."}],
+    "type": "inbook",
+    "year": "1988",
+    "publisher": "Lawrence Erlbaum Publishers",
+    "location": "New Jersey",
+    "link": [{"url":"http://worrydream.com/refs/diSessa%20-%20Knowledge%20in%20Pieces.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
+    "title": "Momentum Flow as an Alternative Perspective in Elementary Mechanics",
+    "author": [{"name":"diSessa, Andrea A."}],
+    "type": "article",
+    "year": "1980",
+    "journal": {"name": "American Journal of Physics", "volume":"48", "issue":"5", "pages":"365--369"},
+    "link": [{"url":"http://worrydream.com/refs/diSessa%20-%20Momentum%20flow%20as%20an%20alternative%20perspective%20in%20elementary%20mechanics.pdf"}],
+    "recommender": "Bret Victor",
+    "tags": [{"area": "CAT"}]
+},
+{
 ]
