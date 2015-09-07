@@ -150,6 +150,9 @@ if (Meteor.isClient) {
   Template.LoginLayout.helpers({
     containerClass: function() {
        return Router.current().route.getName();
+    },
+    isIntro: function() {
+       return Router.current().route.getName() === 'intro';
     }
   });
 }

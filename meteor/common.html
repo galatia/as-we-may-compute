@@ -20,7 +20,11 @@
 
 <template name="LoginLayout">
   <div class="container {{containerClass}}">
-    <div class="laptop"></div>
+    {{#if isIntro}}
+      <canvas id="background"></canvas>
+    {{else}}
+      <div class="laptop"></div>
+    {{/if}}
     <div class="content">
       {{#if loggedIn}}
         {{> yield}}
@@ -28,7 +32,6 @@
         {{> login}}
       {{/if}}
     </div>
-    <div class="laptop-balance"></div>
   </div>
 </template>
 

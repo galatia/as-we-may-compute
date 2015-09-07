@@ -46,6 +46,15 @@ body {
         color: rgb(0,0,0);
     }
     &.intro {
+        height: 100vh;
+        width: 100vw;
+        canvas {
+          height: 100vh;
+          width: 100vw;
+          position: fixed;
+          top: 0;
+          left: 0;
+        }
         background: rgb(5,5,5);
         color: rgb(200,200,200);
         display: flex;
@@ -87,6 +96,7 @@ body {
           flex: none;
           border: 0.39em solid white;
           padding: 1em;
+          background-color: rgb(5,5,5);
         }
         .byline {
           &::before {
