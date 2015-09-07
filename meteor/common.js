@@ -2,6 +2,25 @@ Readings = new Mongo.Collection("readings");
 Intro = new Mongo.Collection("intro");
 Authors = new Mongo.Collection("authors");
 
+AreaCombos = (function() {
+  var singles = ['cf','ct','cat'];
+  var combos = [[0,1,2],
+                [0,2],
+                [0],
+                [0,1],
+                [1],
+                [1,2],
+                [2],
+               ];
+  combos.forEach(function(combo,i,a) {
+    var sel = [];
+    for(var j in combo) {sel.push(singles[combo[j]]);}
+    a[i] = sel.sort().join('-');
+    a[a[i]] = i;
+  });
+  return combos;
+})();
+
 isSecure = function() {
     return Meteor.settings && Meteor.settings.public && Meteor.settings.public.isSecure
 }
@@ -141,6 +160,7 @@ if (Meteor.isServer) {
     var bib = JSON.parse(Assets.getText("bib.json"));
     bib.forEach(function(item) {
       item.urltitle=item.title.replace(/ /g,'-').replace(/[^a-zA-Z0-9-_.+!*'()]/g,'');
+      item.areaCombo=AreaCombos[item.tags.map(function(x){return x.area;}).filter(function(x){return x;}).map(function(x){return x.toLowerCase();}).sort().join('-')];
       Readings.insert(item);
       item.author.forEach(function(author) {
         Authors.upsert(author, {$set: author});
