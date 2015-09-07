@@ -93,7 +93,7 @@
 },
 {
     "title": "J. C. R. Licklider Interview",
-    "author": [{"name":"Licklider, J. C. R."},
+    "author": [{"name":"Licklider, J. C. R."}],
     "editor": [{"name":"Aspray, William"},{"name":"Norberg, Arthur"}],
     "type": "misc",
     "year": "1988",
@@ -661,7 +661,7 @@
     "link": [{"url":"http://worrydream.com/refs/Jaynes%20-%20Notes%20on%20Present%20Status%20and%20Future%20Progress.pdf"}],
     "identifier": [{"type":"doi","id":"10.1007/978-94-011-3460-6_1"}],
     "recommender": "Bret Victor",
-    "tags": [{"area": "CAT"}],
+    "tags": [{"area": "CAT"}]
 },
 {
     "booktitle": "Complexity, Entropy and the Physics of Information",
@@ -674,7 +674,7 @@
     "year": "1989",
     "link": [{"url":"http://worrydream.com/refs/Jaynes%20-%20Probability%20in%20Quantum%20Theory.pdf"}],
     "recommender": "Bret Victor",
-    "tags": [{"area": "CAT"}],
+    "tags": [{"area": "CAT"}]
 },
 {
     "title": "Some Random Observations",
@@ -696,7 +696,7 @@
     "year": "1984",
     "link": [{"url":"http://worrydream.com/refs/Jaynes%20-%20The%20Evolution%20of%20Carnot's%20Principle.pdf"}],
     "recommender": "Bret Victor",
-    "tags": [{"area": "CAT"}],
+    "tags": [{"area": "CAT"}]
 },
 {
     "booktitle": "Maximum Entropy and Bayesian Methods",
@@ -706,7 +706,7 @@
     "year": "1996",
     "link": [{"url":"http://worrydream.com/refs/Jaynes%20-%20The%20Gibbs%20Paradox.pdf"}],
     "recommender": "Bret Victor",
-    "tags": [{"area": "CAT"}],
+    "tags": [{"area": "CAT"}]
 },
 {
     "title": "A Personal Computer for Children of All Ages",
@@ -730,7 +730,7 @@
 },
 {
     "title": "Steps Toward the Reinvention of Programming",
-    "subtitle": "A Compact And Practical Model of Personal Computing As A Self-Exploratorium"
+    "subtitle": "A Compact And Practical Model of Personal Computing As A Self-Exploratorium",
     "author": [{"name":"Kay, Alan"}],
     "type": "unpublished",
     "year": "2006",
@@ -823,7 +823,7 @@
 },
 {
     "title": "User Interface: A Personal View",
-    "booktitle": "MultiMedia from Wagner to Virtual Reality"
+    "booktitle": "MultiMedia from Wagner to Virtual Reality",
     "editor": [{"name": "Packer, Randall"}, {"name": "Jordan, Ken"}],
     "author": [{"name":"Kay, Alan"}],
     "type": "inbook",
@@ -844,8 +844,8 @@
     "link": [{"url":"http://worrydream.com/refs/Kennedy%20-%20Administration%20of%20Research%20in%20a%20Research%20Corporation.html"}],
     "identifier": [{"type":"doi","id":"10.1145/359576.359579"}],
     "recommender": "Bret Victor",
-    "tags": [{"area": "CAT"}]
-    "note": "Bret: 'Administration of Research in a Research Corporation' gave Engelbart the idea for his "conceptual framework" paper."
+    "tags": [{"area": "CAT"}],
+    "note": "Bret: 'Administration of Research in a Research Corporation' gave Engelbart the idea for his \"conceptual framework\" paper."
 },
 {
     "title": "How to Write a 21st Century Proof",
@@ -1120,8 +1120,7 @@
     "tags": [{"area": "CAT"}]
 },
 {
-    "title": "Why Programming is a Good Medium for Expressing Poorly
-    Understood and Sloppily-Formulated Ideas",
+    "title": "Why Programming is a Good Medium for Expressing Poorly Understood and Sloppily-Formulated Ideas",
     "subtitle": "Design and Planning II: Computers in Design and Communication",
     "author": [{"name":"Minsky, Marvin"}],
     "type": "inbook",
@@ -1331,8 +1330,8 @@
 },
 {
     "title": "Oral History of Robert W. Taylor",
-    "author": [{"name":"Taylor, Robert W."},
-    "editor": {"name":"McJones, Paul"},
+    "author": [{"name":"Taylor, Robert W."}],
+    "editor": [{"name":"McJones, Paul"}],
     "type": "misc",
     "year": "2008",
     "publisher": "Computer History Museum",
@@ -1418,6 +1417,7 @@
 {
     "title": "8010 Star Information System",
     "subtitle": "Learner's Guide",
+    "author": [{"name": "Xerox Palo Alto Research Center"}],
     "type": "manual",
     "year": "1981",
     "institution": "Xerox Palo Alto Research Center",
